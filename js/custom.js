@@ -21,6 +21,12 @@ function getRefDetails() {
     "refLink": refLink,
     "refComment": refComment
   };
+  document.getElementById('title').value='';
+  document.getElementById('link').value='';
+  document.getElementById('comment').value='';
+
+  console.log(refDetails);
+
 }
 function changeDetails() {
   prompt("Change name");
