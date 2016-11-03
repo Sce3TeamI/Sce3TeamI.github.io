@@ -28,28 +28,38 @@ function getRefDetails() {
   console.log(refDetails);
 
 }
-function changeDetails() {
-  prompt("Change name");
 
+function submitRef() {
+  var reference = getRefDetails();
+  // todo: PUT a new reference via Jay's RESTful API
 }
 
-function getNewDetails() {
+function removeRef() {
+  var reference = getRefDetails();
+  // todo: DELETE a reference (using its unique id) via the RESTful API 
+
+
+function submitNewUser() {
   var username = document.getElementById('username').value;
   // var lastName = document.getElementById('last_name').value;
   // var emailAddress = document.getElementById('email').value;
   var password = document.getElementById('password').value;
-  var passwordConf = document.getElementById('password_confirmation').value;
 
 
   var newDetails =
   {
-    "firstName":firstName,
-    "lastName": lastName,
-    "emailAddress": emailAddress,
-    "password": password,
-    "passwordConf": passwordConf
+    "username": username,
+    "password": password
   };
+  
+  // todo: PUT a new user via the API
 }
+  
+function showAllRef() {
+  // todo: GET all the references via the API
+  // todo: for each reference in references -> <li> the reference </li> or smthing
+}
+
 
 $(function () {
                 $('#datetimepicker4').datetimepicker();
