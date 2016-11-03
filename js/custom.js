@@ -37,7 +37,7 @@ function submitRef() {
 function removeRef() {
   var reference = getRefDetails();
   // todo: DELETE a reference (using its unique id) via the RESTful API 
-
+}
 
 function submitNewUser() {
   var username = document.getElementById('username').value;
