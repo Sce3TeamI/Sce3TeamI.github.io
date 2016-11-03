@@ -9,3 +9,7 @@ body {
   background-color: blue;
   font-style: 50px;
 }
+
+.text-center {
+  color: white;
+}

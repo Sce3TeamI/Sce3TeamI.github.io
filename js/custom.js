@@ -28,9 +28,9 @@ function changeDetails() {
 }
 
 function getNewDetails() {
-  var firstName = document.getElementById('first_name').value;
-  var lastName = document.getElementById('last_name').value;
-  var emailAddress = document.getElementById('email').value;
+  var username = document.getElementById('username').value;
+  // var lastName = document.getElementById('last_name').value;
+  // var emailAddress = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   var passwordConf = document.getElementById('password_confirmation').value;
 
