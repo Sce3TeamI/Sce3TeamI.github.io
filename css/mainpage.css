@@ -1,0 +1,89 @@
+body {
+
+  padding-top: 70px;
+  background-color: #1B4B77;
+}
+
+
+
+h10 {
+  font-size: 30px;
+}
+
+.table-responsive-vertical {
+  padding-top: 30px;
+}
+.fields {
+  padding-top: 30px;
+
+}
+.jumbotron {
+  background-color: #E0EEE4;
+  padding-top: 43px;
+
+  border-radius: 20px;
+
+
+}
+.navbar-custom {
+  background-color: #E0EEE4;
+
+  color: #000;
+}
+
+.navbar-brand {
+  color: #000;
+}
+
+.smoothScroll {
+  color: #000;
+
+}
+test {
+  color: black;
+}
+
+.btn-custom {
+    color: #333333;
+ }
+
+ .btn-custom:hover {
+   color: #9FA9A2;
+}
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  padding-top: 10px;
+  text-align: right;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #E0EEE4;
+}
+
+.modeButton {
+  padding-top: 20px;
+  text-align: center;
+}
+
+.modal  {
+  background-color: rgba(126, 128, 126, 0.9);;
+}
+
+.modal-content {
+  background-color: rgba(224,238,228, 0.7);;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */

@@ -1,0 +1,53 @@
+body {
+
+  min-height: 2000px;
+  padding-top: 70px;
+  background-color: #1B4B77;
+}
+
+.navbar-custom {
+  background-color: #E0EEE4;
+  color: #000;
+}
+.navbar-brand {
+  color: #000;
+}
+
+
+
+h10 {
+  font-size: 30px;
+}
+
+.jumbotron {
+  background-color: #E0EEE4;
+  border-radius: 20px;
+
+}
+
+h11 {
+font-size: 20px;
+}
+
+.btn-custom {
+    background-color: #E0EEE4;
+    border-color: #E0EEE4;
+    color: #333333;
+ }
+
+ .btn-custom:hover {
+   background-color: #E0EEE4;
+   border-color: #E0EEE4;
+   color: white;
+}
+
+.footer {
+  position: absolute;
+  padding-top: 10px;
+  text-align: right;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #E0EEE4;
+}
