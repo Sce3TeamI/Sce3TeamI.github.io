@@ -93,7 +93,7 @@
 			$('#SignUpButton').click(function(event)
 			{
 				event.preventDefault();
-				if ($('#password').val() != $('#password_confirmation'))
+				if ($('#password').val() != $('#password_confirmation').val())
 				{
 					alert("Passwords don't match");
 					return;
