@@ -104,8 +104,10 @@ function removeRef() {
 
 function showAllRef() {
     $.get("api/getUserReferences?username="+encodeURIComponent(sessionUsername), function(data) {
+      console.log(data);
       data = JSON.parse(data);
-      console.log(Object.keys(data).length);
+      console.log(data);
+      //console.log(Object.keys(data).length);
       var out = "<table>";
       out += " <tr> <th>id</th> <th>title</th> <th>body</th> </tr>"
       // For each objects in the JSON response, create a table entry with some properties (eg: id, title, body ect..)
