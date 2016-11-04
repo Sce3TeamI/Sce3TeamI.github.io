@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,36 +32,48 @@
 
     <script src="assets/js/ie-emulation-modes-warning.js"></script>
 
+    <script src="custom.js"></script>
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/ripples.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
+
     <body data-spy="scroll" data-offset="0" data-target="#nav">
 
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-custom navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-custom navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="mainpage.html">The References Manager</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li  class="smoothScroll"> <a href="#myRefs" href="mainpage.html">My References</a></li>
-            <li class="smoothScroll" id = "test"><a href="#overview">My Dashboard</a></li>
+                    <a class="navbar-brand" href="mainpage.html">The References Manager</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="smoothScroll"> <a href="#myRefs" href="mainpage.html">My References</a></li>
+                        <li class="smoothScroll" id="test"><a href="#overview">My Dashboard</a></li>
 
 
-            <!-- <li class="dropdown">
+                        <!-- <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">In case dropdown <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
@@ -72,245 +85,96 @@
                 <li><a href="#">One more separated link</a></li>
               </ul>
             </li> -->
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <!-- <li class="active"><a href="myaccount.html">My Account <span class="sr-only">(current)</span></a></li> -->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, name <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li role="separator" class="divider"></li>
-                <li><a href="index.html">Sign out</a></li>
-              </ul>
-            </li>
-            <!-- <li class="active"><a href="index.html">Sign out <span class="sr-only">(current)</span></a></li> -->
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- <li class="active"><a href="myaccount.html">My Account <span class="sr-only">(current)</span></a></li> -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello, name <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li role="separator" class="divider"></li>
+                                <li><a href="index.html">Sign out</a></li>
+                            </ul>
+                        </li>
+                        <!-- <li class="active"><a href="index.html">Sign out <span class="sr-only">(current)</span></a></li> -->
 
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </nav>
 
-    <div class="container">
+        <div class="container">
 
-      <!-- Main component for a primary marketing message or call to action -->
-      <section id="overview" name="overview"></section>
-      <div class="jumbotron">
-        <h10>My Dashboard</h10>
-        <!-- Trigger the modal with a button -->
-        <div class= "modeButton">
-        <p>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a reference</button>
-        <a href="#myRefs" class="btn btn-info btn-lg"  role="button">My references </a>
-        <a href="index.html" class="btn btn-info btn-lg"  role="button">Sign out </a>
+            <!-- Main component for a primary marketing message or call to action -->
+            <section id="overview" name="overview"></section>
+            <div class="jumbotron">
+                <h10>My Dashboard</h10>
+                <!-- Trigger the modal with a button -->
+                <div class="modeButton">
+                    <p>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a reference</button>
+                        <a href="#myRefs" class="btn btn-info btn-lg" role="button">My references </a>
+                        <a href="index.html" class="btn btn-info btn-lg" role="button">Sign out </a>
 
 
 
-      </p>
-    </div>
+                    </p>
+                </div>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Add reference</h4>
-      </div>
-      <div class="modal-body">
-        <div class = "fields" >
-        <label for="title">Reference Title:</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Title"> <br>
-        <label for="link">Reference Link:</label>
-        <input type="text" name="link" id="link" class="form-control" placeholder="Link"> <br>
-        <label for="comment">Reference Comments:</label>
-         <textarea class="form-control" rows="5" id="comment", placeholder="Notes"></textarea> <br>
-       </div>
 
-        <p>
-          <a class="btn btn-lg btn-primary" onclick="getRefDetails()" role="button" data-dismiss="modal">Submit Reference</a>
-          <a class="btn btn-lg btn-primary" href="#"  role="button" data-dismiss="modal" >Cancel</a>
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add reference</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="fields">
+                                <label for="title">Reference Title:</label>
+                                <input type="text" name="title" id="title" class="form-control" placeholder="Title"> <br>
+                                <label for="link">Reference Link:</label>
+                                <input type="text" name="link" id="link" class="form-control" placeholder="Link"> <br>
+                                <label for="comment">Reference Comments:</label>
+                                <textarea class="form-control" rows="5" id="comment" , placeholder="Notes"></textarea> <br>
+                            </div>
 
-        </p>
-      </div>
-      <!-- <div class="modal-footer">
+                            <p>
+                                <a class="btn btn-lg btn-primary" onclick="getRefDetails()" role="button" data-dismiss="modal">Submit Reference</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button" data-dismiss="modal">Cancel</a>
+
+                            </p>
+                        </div>
+                        <!-- <div class="modal-footer">
       </div> -->
-    </div>
-
-  </div>
-</div>
-        <p>
-        </p>
-      </div>
-
-      <section id="myRefs" name="myRefs"></section>
-      <div class="jumbotron">
-        <h10>My References</h10>
-        <!-- Responsive table starts here -->
-
-<!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
-<div class="table-responsive-vertical shadow-z-1">
-<!-- Table starts here -->
-<table id="table" class="table table-hover table-mc-light-blue">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Reference</th>
-        <th>Link</th>
-        <th>Notes</th>
-        <th></th>
-
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td data-title="ID">1</td>
-        <td data-title="Ref">Example Title</td>
-        <td data-title="Link">
-          <a href="www.google.com" target="_blank">www.google.com</a>
-        </td>
-        <td data-title="Notes">Some notes here</td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        </button> </h11></td>
-
-      </tr>
-      <tr>
-        <td data-title="ID">2</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">3</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">4</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">5</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">6</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">7</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">8</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">9</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-      <tr>
-        <td data-title="ID">10</td>
-        <td data-title="Ref"></td>
-        <td data-title="Link">
-          <a href="#" target="_blank"></a>
-        </td>
-        <td data-title="Notes"></td>
-        <td <button type="button" class="btn btn-custom" aria-label="Left Align">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-        </button> </h11></td>
-        <td <button type="button" class="btn btn-custom" >
-          <span class="glyphicon glyphicon-trash" ></span>
-        </button> </h11></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+                    </div>
 
 
-</div>
-      <!-- <section id="addRef" name="addRef"></section>
+                </div>
+                <p>
+                </p>
+            </div>
+
+            <section id="myRefs" name="myRefs"></section>
+            <div class="jumbotron">
+                <h10>My References</h10>
+                <!-- Responsive table starts here -->
+
+
+
+                <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+                <div class="table-responsive-vertical shadow-z-1">
+                    <!-- Table starts here -->
+                    <table id="table" class="table table-hover table-mc-light-blue">
+                        <!-- The stuff from showAllRef() will go in here-->
+                    </table>
+                </div>
+
+
+            </div>
+            <!-- <section id="addRef" name="addRef"></section>
 
       <div class="jumbotron">
         <h10>Add References</h10>
@@ -328,29 +192,34 @@
 
 
 
-        <p>
-        </p>
-      </div>
-
-      <footer class="footer">
-        <div class="container">
-          <p class="text-muted"> &copy; 2016  Made with love by Matt and the team <3 </p>
+            <p>
+            </p>
         </div>
-      </footer>
 
-    </div> <!-- /container -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted"> &copy; 2016 Made with love by Matt and the team
+                    <3 </p>
+            </div>
+        </footer>
+
+        </div>
+        <!-- /container -->
 
 
-    <!-- Bootstrap core JavaScript
+        <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/custom.js"></script>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/custom.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>
+        <script src="js/bootstrap.min.js"></script>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+
 </html>
