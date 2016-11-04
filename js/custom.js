@@ -68,7 +68,7 @@ function getRefDetails() {
     document.getElementById('link').value = '';
     document.getElementById('comment').value = '';
 
-    console.log(refDetails);
+    return refDetails;
 
 }
 
