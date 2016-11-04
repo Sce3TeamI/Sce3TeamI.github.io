@@ -130,6 +130,15 @@ function showAllRef() {
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
 
 
+$(function()
+{
+    $.get("api/getLoggedInUser", function(data)
+    {
+        sessionUsername = data;
+        showAllRef();
+    });
+});
+
 $(function() {
     $('#datetimepicker4').datetimepicker();
 });
