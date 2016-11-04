@@ -96,7 +96,7 @@ function editRef() {
     });
 }
 
-function removeRef() {
+function removeRef(id) {
     var reference = getRefDetails();
     $.get("api/removeReference?citationID" + + encodeURIComponent(id), function(data) {
     });
@@ -123,7 +123,7 @@ function showAllRef() {
               "</td><td>" +
               data[i].notes +
               "</td><td> <button id='editButton' data-toggle='modal' data-target='#modalEdit'> Edit </button> </td><td>" +
-              "</td><td> <button> Remove </button> </td><td>"
+              "</td><td> <button class='removeButton' id='remove_" + data[i].citationID + "'> Remove </button> </td><td>"
               "</td></tr>";
           console.log(data[i]);
       }
@@ -134,6 +134,11 @@ function showAllRef() {
 }
 // window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
 
+$('.removeButton').click(function(event)
+{
+    var id = event.target.id.replace("remove_", "");
+    removeRef(id);
+});
 
 $(function()
 {
