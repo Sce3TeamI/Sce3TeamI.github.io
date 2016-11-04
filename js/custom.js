@@ -45,7 +45,7 @@ function getAccountDetails() {
         "email": emailAddress,
         "password": password
     };
-
+    httpGetAsync("api/loginuser?username="+email+"&password="+password, "GET", reference);
 }
 
 function getRefDetails() {
