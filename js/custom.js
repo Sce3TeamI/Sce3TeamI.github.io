@@ -18,9 +18,9 @@ function tableCallback(data) {
     data = JSON.parse(data);
     console.log(Object.keys(data).length);
     var out = "<table>";
-    out += " <tr> <th>id</th> <th>title</th> <th>body</th> </tr>" 
+    out += " <tr> <th>id</th> <th>title</th> <th>body</th> </tr>"
     for (var i = 0; i < Object.keys(data).length; i++) {
-            out += "<tr><td>" +
+        out += "<tr><td>" +
             data[i].id +
             "</td><td>" +
             data[i].title +
@@ -99,10 +99,10 @@ function showAllRef() {
     // GET all the references via the API
     var references = httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", null, tableCallback);
 
-    console.log("whatver ahahahahahah");
+    
     // todo: for each reference in references -> <li> the reference </li> or smthing
 }
-
+window.onload = showAllRef; // This ensures that showAllRef() shows a table as soon as the main page loads
 
 
 $(function() {
