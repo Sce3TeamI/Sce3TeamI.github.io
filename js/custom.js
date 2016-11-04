@@ -1,3 +1,5 @@
+var sessionUsername = ""
+
 function httpGetAsync(url, type, message, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -45,6 +47,7 @@ function getAccountDetails() {
         "email": emailAddress,
         "password": password
     };
+    sessionUsername = email
     httpGetAsync("api/loginuser?username="+email+"&password="+password, "GET", reference);
 }
 
@@ -91,7 +94,7 @@ function removeRef() {
 
 
 function showAllRef() {
-    var references = httpGetAsync("api/getUserReferences?username="+username, "GET", null, tableCallback);
+    var references = httpGetAsync("api/getUserReference?username="+sessionUsername, "GET", null, tableCallback);
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
