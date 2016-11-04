@@ -91,7 +91,7 @@ function removeRef() {
 
 
 function showAllRef() {
-    var references = httpGetAsync("api/", "GET", null, tableCallback);
+    var references = httpGetAsync("api/getUserReferences?username="+username, "GET", null, tableCallback);
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
