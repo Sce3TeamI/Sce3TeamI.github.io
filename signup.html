@@ -79,7 +79,7 @@
 			    				</div>
 			    			</div> -->
 
-                <a href="confirmation.html" class="btn btn-lg btn-primary btn-block" onclick="submitNewUser()" role="button">Register</a>
+                <a href="#" id="SignUpButton" class="btn btn-lg btn-primary btn-block" role="button">Register</a>
 
 			    		</form>
 			    	</div>
@@ -87,7 +87,36 @@
     		</div>
     	</div>
     </div>
-    <script src="js/custom.js"></script>
+    <!--<script src="js/custom.js"></script>-->
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$('#SignUpButton').click(function(event)
+			{
+				event.preventDefault();
+				if ($('#password').val() != $('#password_confirmation'))
+				{
+					alert("Passwords don't match");
+					return;
+				}
+				var username = $('#username').val();
+				var password = $('#password').val();
 
+				$.get("api/createUser?username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password), function(data)
+				{
+					if (data == "USER_CREATED")
+					{
+						window.location.href = "confirmation.html";
+					}
+					else if (data == "USER_EXISTS")
+					{
+						alert("Username already exists. Please choose another.");
+					}
+					else
+					{
+						alert("An unknown error occurred: " + data);
+					}
+				});
+			});
+		</script>
 </body>
 </html>

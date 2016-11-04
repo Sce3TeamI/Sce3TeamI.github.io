@@ -75,7 +75,7 @@ function submitNewUser() {
         "password": password
     };
 
-    httpGetAsync("api/createuser?username="+username+"&password="+password, "PUT", newDetails);
+    httpGetAsync("api/createUser?username="+username+"&password="+password, "PUT", newDetails);
 }
 
 function submitRef() {
