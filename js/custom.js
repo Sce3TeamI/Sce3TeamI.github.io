@@ -127,7 +127,7 @@ function showAllRef() {
     })
     // The <table> listing is done in the tableCallback function
 }
-window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
+// window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
 
 
 $(function()
@@ -137,8 +137,4 @@ $(function()
         sessionUsername = data;
         showAllRef();
     });
-});
-
-$(function() {
-    $('#datetimepicker4').datetimepicker();
 });
