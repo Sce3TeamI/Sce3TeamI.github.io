@@ -28,12 +28,14 @@ function tableCallback(data) {
     // For each objects in the JSON response, create a table entry with some properties (eg: id, title, body ect..)
     for (var i = 0; i < Object.keys(data).length; i++) {
         // TODO: When we'll use the actual API of our server, change these properties to the actual properties of the DB.
-        out += "<tr><td>" +
+        out += "<tr id='refID'><td>" +
             data[i].id +
             "</td><td>" +
             data[i].title +
             "</td><td>" +
             data[i].body +
+            "</td><td> <button id='editButton' data-toggle='modal' data-target='#modalEdit'> Edit </button> </td><td>" +
+            "</td><td> <button> Remove </button> </td><td>"
             "</td></tr>";
         console.log(data[i]);
     }
@@ -85,9 +87,28 @@ function submitNewUser() {
     httpGetAsync("api/createUser?username="+username+"&password="+password, "PUT", newDetails);
 }
 
-function submitRef() {
+function addRef() {
     var reference = getRefDetails();
-    httpGetAsync("api/addreference?title="+reference.refTitle+"&link="+reference.refLink+"&notes="+reference.refComment, "PUT", reference);
+    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
+}
+
+
+
+function editRef() {
+  // Copy/Pasted the content of getRefDetails() bcs we don't have time anymore.
+  // Ugly but it works
+    var refTitle = document.getElementById('title').value;
+    var refLink = document.getElementById('link').value;
+    var refComment = document.getElementById('comment').value;
+    var refID = document.getElementById('referenceID').value;
+    var reference = {
+        "refTitle": refTitle,
+        "refLink": refLink,
+        "refComment": refComment,
+        "refID": refID
+    };
+
+    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
 }
 
 function removeRef() {
