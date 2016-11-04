@@ -14,17 +14,23 @@ function httpGetAsync(url, type, message, callback) {
     request.send(message);
 }
 
-function mycallback(data) {
+function tableCallback(data) {
     data = JSON.parse(data);
     console.log(Object.keys(data).length);
     var out = "<table>";
+    out += " <tr> <th>id</th> <th>title</th> <th>body</th> </tr>" 
     for (var i = 0; i < Object.keys(data).length; i++) {
-        var obj = data[i];
-        out += "<tr><td>" + obj.title + "</td></tr>"
-        console.log(obj);
+            out += "<tr><td>" +
+            data[i].id +
+            "</td><td>" +
+            data[i].title +
+            "</td><td>" +
+            data[i].body +
+            "</td></tr>";
+        console.log(data[i]);
     }
-    var out += "</table>";
-    document.getElementById("id01").innerHTML = out;
+    out += "</table>";
+    document.getElementById("table").innerHTML = out;
 }
 
 
@@ -91,7 +97,7 @@ function submitNewUser() {
 
 function showAllRef() {
     // GET all the references via the API
-    var references = httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", null, mycallback);
+    var references = httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", null, tableCallback);
 
     console.log("whatver ahahahahahah");
     // todo: for each reference in references -> <li> the reference </li> or smthing
