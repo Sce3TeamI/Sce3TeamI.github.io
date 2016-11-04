@@ -66,17 +66,6 @@ function getRefDetails() {
 
 }
 
-function submitRef() {
-    var reference = getRefDetails();
-    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/addreference?title="+reference.refTitle+"&link="+reference.refLink+"&notes="+reference.refComment, "PUT", reference);
-}
-
-function removeRef() {
-    var reference = getRefDetails();
-    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/removeRef?", "DELETE", reference);
-
-}
-
 function submitNewUser() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
@@ -86,13 +75,23 @@ function submitNewUser() {
         "password": password
     };
 
-    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/createuser?username="+username+"&password="+password, "PUT", newDetails);
+    httpGetAsync("api/createuser?username="+username+"&password="+password, "PUT", newDetails);
+}
+
+function submitRef() {
+    var reference = getRefDetails();
+    httpGetAsync("api/addreference?title="+reference.refTitle+"&link="+reference.refLink+"&notes="+reference.refComment, "PUT", reference);
+}
+
+function removeRef() {
+    var reference = getRefDetails();
+    httpGetAsync("api/removeRef?", "DELETE", reference);
 
 }
 
 
 function showAllRef() {
-    var references = httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/", "GET", null, tableCallback);
+    var references = httpGetAsync("api/", "GET", null, tableCallback);
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
