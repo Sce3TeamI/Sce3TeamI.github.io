@@ -140,6 +140,14 @@ function showAllRef() {
 //     removeRef(id);
 // });
 
+$(function(){
+    $(document).on("click",".removeButton",function(event) {
+         var id = event.target.id.replace("remove_", "");
+         removeRef(id);
+    });
+});
+
+
 $(function()
 {
     $.get("api/getLoggedInUser", function(data)
