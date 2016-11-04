@@ -98,7 +98,7 @@ function editRef() {
 
 function removeRef(id) {
    // var reference = getRefDetails();
-    $.get("api/removeReference?citationID=" + encodeURIComponent(id), function(data) {
+    $.get("api/removeRefence?citationID=" + encodeURIComponent(id), function(data) {
     });
 }
 
