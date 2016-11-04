@@ -92,7 +92,7 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hello<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li role="separator" class="divider"></li>
-                                <li><a href="index.html">Sign out</a></li>
+                                <li><a href="#" id="SignOutButton">Sign out</a></li>
                             </ul>
                         </li>
                         <!-- <li class="active"><a href="index.html">Sign out <span class="sr-only">(current)</span></a></li> -->
@@ -247,6 +247,17 @@
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+        <script>
+            $('#SignOutButton').on('click', function(event)
+            {
+                event.preventDefault();
+                $.get('api/logout', function(data)
+                {
+                    window.location.href = "index.html";
+                });
+            });
+        </script>
     </body>
 
 </html>
