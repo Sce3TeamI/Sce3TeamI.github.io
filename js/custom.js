@@ -1,7 +1,6 @@
 var sessionUsername;
 
 function httpGetAsync(url, type, message, callback) {
-    console.log("ok");
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState === 4) {
@@ -45,6 +44,7 @@ function tableCallback(data) {
 
 
 function getAccountDetails() {
+    console.log("this works");
     var emailAddress = document.getElementById('inputEmail').value;
     var password = document.getElementById('inputPassword').value;
 
