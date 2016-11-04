@@ -54,7 +54,7 @@ function getAccountDetails() {
         "email": emailAddress,
         "password": password
     };
-    httpGetAsync("api/loginuser?username="+email+"&password="+password, "GET", null, userCallback);
+    httpGetAsync("api/loginuser?username="+encodeURIComponent(email)+"&password="+encodeURIComponent(password), "GET", null, userCallback);
 }
 
 function getRefDetails() {
@@ -84,7 +84,7 @@ function submitNewUser() {
         "password": password
     };
 
-    httpGetAsync("api/createUser?username="+username+"&password="+password, "PUT", newDetails);
+    httpGetAsync("api/createUser?username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password), "PUT", newDetails);
 }
 
 function addRef() {
@@ -119,7 +119,7 @@ function removeRef() {
 
 
 function showAllRef() {
-    var references = httpGetAsync("api/getUserReferences?username="+username, "GET", null, tableCallback);
+    var references = httpGetAsync("api/getUserReferences?username="+encodeURIComponent(username), "GET", null, tableCallback);
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
