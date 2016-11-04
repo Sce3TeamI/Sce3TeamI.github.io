@@ -1,6 +1,6 @@
 var sessionUsername;
 
-function httpGetAsync(url, type, message, callback) {
+/*function httpGetAsync(url, type, message, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (request.readyState === 4) {
@@ -14,11 +14,7 @@ function httpGetAsync(url, type, message, callback) {
     };
     request.open(type, url, true);
     request.send(message);
-}
-
-function userCallback(data) {
-  console.log(data);
-}
+}*/
 
 function tableCallback(data) {
     data = JSON.parse(data);
@@ -45,6 +41,7 @@ function tableCallback(data) {
 
 
 
+/*Chris did this within the html
 function getAccountDetails() {
     console.log("this works");
     var emailAddress = document.getElementById('inputEmail').value;
@@ -55,7 +52,7 @@ function getAccountDetails() {
         "password": password
     };
     httpGetAsync("api/loginuser?username="+encodeURIComponent(email)+"&password="+encodeURIComponent(password), "GET", null, userCallback);
-}
+}*/
 
 function getRefDetails() {
     var refTitle = document.getElementById('title').value;
@@ -75,6 +72,7 @@ function getRefDetails() {
 
 }
 
+/*Chris also did this within the html
 function submitNewUser() {
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
@@ -85,16 +83,13 @@ function submitNewUser() {
     };
 
     httpGetAsync("api/createUser?username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password), "GET", newDetails);
-}
+}*/
 
 function addRef() {
     var reference = getRefDetails();
-    // httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", reference);
-    var title = document.getElementById('title').value;
-    var link = document.getElementById('link').value;
-    var notes = document.getElementById('comment').value;
-    httpGetAsync("api/editReference?title=" + encodeURIComponent(title) + "&link=" + encodeURIComponent(link) + "&notes=" +
-        encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername) , "GET", reference);
+    $.get("api/editReference?title=" + encodeURIComponent(reference.refTitle) + "&link=" + encodeURIComponent(reference.refLink) + "&notes=" +
+        encodeURIComponent(reference.refComment) + "&user=" + encodeURIComponent(sessionUsername), function(data) {
+        })
 }
 
 
@@ -117,20 +112,26 @@ function editRef() {
     var link = document.getElementById('link').value;
     var notes = document.getElementById('comment').value;
     var id = document.getElementById('referenceID').value;
-    httpGetAsync("api/editReference?citationID=" + encodeURIComponent(id) + "&title=" +
+    $.get("api/editReference?citationID=" + encodeURIComponent(id) + "&title=" +
         encodeURIComponent(title) + "&link=" + encodeURIComponent(link) + "&notes=" +
-        encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername) , "GET", reference);
+        encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername), function(data) {
+
+            })
 }
 
 function removeRef() {
     var reference = getRefDetails();
-    httpGetAsync("api/removeReference?citationID", "GET", reference);
+    $.get("api/removeReference?citationID" + + encodeURIComponent(id), function(data) {
 
+    });
 }
 
 
 function showAllRef() {
-    var references = httpGetAsync("api/getUserReferences?username="+encodeURIComponent(username), "GET", null, tableCallback);
+    var references;
+    $.get("api/getUserReferences?username="+encodeURIComponent(username), function(data) {
+      references = data;
+    })
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
