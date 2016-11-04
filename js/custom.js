@@ -32,11 +32,14 @@ function getRefDetails() {
 function submitRef() {
   var reference = getRefDetails();
   // todo: PUT a new reference via Jay's RESTful API
+  httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
 }
 
 function removeRef() {
   var reference = getRefDetails();
-  // todo: DELETE a reference (using its unique id) via the RESTful API 
+  // todo: DELETE a reference (using its unique id) via the RESTful API
+  httpGetAsync("https://jsonplaceholder.typicode.com/posts", "DELETE", reference);
+
 }
 
 function submitNewUser() {
@@ -51,15 +54,33 @@ function submitNewUser() {
     "username": username,
     "password": password
   };
-  
+
   // todo: PUT a new user via the API
+  httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", newDetails);
+
 }
-  
+
 function showAllRef() {
-  // todo: GET all the references via the API
+  // GET all the references via the API
+  var references = httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", null);
   // todo: for each reference in references -> <li> the reference </li> or smthing
 }
 
+function httpGetAsync(url, type, message) {
+  var request = new XMLHttpRequest();
+  request.onreadystatechange = function() {
+      if (request.readyState === 4) {
+          if (request.status === 200) {
+              document.body.className = 'ok';
+              console.log(request.responseText);
+          } else {
+              document.body.className = 'error';
+          }
+      }
+  };
+  request.open(type, url , true);
+  request.send(message);
+}
 
 $(function () {
                 $('#datetimepicker4').datetimepicker();
