@@ -112,7 +112,7 @@
                 <!-- Trigger the modal with a button -->
                 <div class="modeButton">
                     <p>
-                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add a reference</button>
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#modalAdd">Add a reference</button>
                         <a href="#myRefs" class="btn btn-info btn-lg" role="button">My references </a>
                         <a href="index.html" class="btn btn-info btn-lg" role="button">Sign out </a>
 
@@ -122,9 +122,7 @@
                 </div>
 
                 <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
-
-
+                <div id="modalAdd" class="modal fade" role="dialog">
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
@@ -142,19 +140,48 @@
                             </div>
 
                             <p>
-                                <a class="btn btn-lg btn-primary" onclick="getRefDetails()" role="button" data-dismiss="modal">Submit Reference</a>
+                                <a class="btn btn-lg btn-primary" onclick="addRef()" role="button" data-dismiss="modal">Submit Reference</a>
                                 <a class="btn btn-lg btn-primary" href="#" role="button" data-dismiss="modal">Cancel</a>
 
                             </p>
                         </div>
-                        <!-- <div class="modal-footer">
-      </div> -->
                     </div>
-
-
                 </div>
-                <p>
-                </p>
+                <!-- End of ModalAdd -->
+
+                <!-- Modal -->
+                <div id="modalEdit" class="modal fade" role="dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Edit reference</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="fields">
+                                <label for="referenceID">ID</label>
+                                <input type="text" name="referenceID" id="referenceID" class="form-control" placeholder="reference ID"> <br>
+                                <label for="title">Reference Title:</label>
+                                <input type="text" name="title" id="title" class="form-control" placeholder="Title"> <br>
+                                <label for="link">Reference Link:</label>
+                                <input type="text" name="link" id="link" class="form-control" placeholder="Link"> <br>
+                                <label for="comment">Reference Comments:</label>
+                                <textarea class="form-control" rows="5" id="comment" , placeholder="Notes"></textarea> <br>
+                            </div>
+
+                            <p>
+                                <a class="btn btn-lg btn-primary" onclick="editRef()" role="button" data-dismiss="modal">Submit Reference</a>
+                                <a class="btn btn-lg btn-primary" href="#" role="button" data-dismiss="modal">Cancel</a>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of ModalEdit -->
+
+
+
+
             </div>
 
             <section id="myRefs" name="myRefs"></section>
@@ -198,7 +225,7 @@
 
         <footer class="footer">
             <div class="container">
-                <p class="text-muted"> &copy; 2016 Made with love by Matt and the team
+                <p class="text-muted"> &copy; 2016 Made with love by Matt, Aksel and the team
                     <3 </p>
             </div>
         </footer>
