@@ -64,7 +64,7 @@ function addRef() {
     var reference = getRefDetails();
     $.get("api/addReference?title=" + encodeURIComponent(reference.refTitle) + "&link=" + encodeURIComponent(reference.refLink) + "&notes=" +
         encodeURIComponent(reference.refComment) + "&user=" + encodeURIComponent(sessionUsername), function(data) {
-            window.location.href = window.location.href;
+            
         })
 }
 
@@ -92,7 +92,6 @@ function editRef() {
         encodeURIComponent(title) + "&link=" + encodeURIComponent(link) + "&notes=" +
         encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername), function(data) {
 
-        window.location.href = window.location.href;
 
     });
 }
@@ -100,7 +99,6 @@ function editRef() {
 function removeRef() {
     var reference = getRefDetails();
     $.get("api/removeReference?citationID" + + encodeURIComponent(id), function(data) {
-        window.location.href = window.location.href;
     });
 }
 
