@@ -84,12 +84,17 @@ function submitNewUser() {
         "password": password
     };
 
-    httpGetAsync("api/createUser?username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password), "PUT", newDetails);
+    httpGetAsync("api/createUser?username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password), "GET", newDetails);
 }
 
 function addRef() {
     var reference = getRefDetails();
-    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
+    // httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", reference);
+    var title = document.getElementById('title').value;
+    var link = document.getElementById('link').value;
+    var notes = document.getElementById('comment').value;
+    httpGetAsync("api/editReference?title=" + encodeURIComponent(title) + "&link=" + encodeURIComponent(link) + "&notes=" +
+        encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername) , "GET", reference);
 }
 
 
@@ -97,23 +102,29 @@ function addRef() {
 function editRef() {
   // Copy/Pasted the content of getRefDetails() bcs we don't have time anymore.
   // Ugly but it works
-    var refTitle = document.getElementById('title').value;
-    var refLink = document.getElementById('link').value;
-    var refComment = document.getElementById('comment').value;
-    var refID = document.getElementById('referenceID').value;
-    var reference = {
-        "refTitle": refTitle,
-        "refLink": refLink,
-        "refComment": refComment,
-        "refID": refID
-    };
+    // var refTitle = document.getElementById('title').value;
+    // var refLink = document.getElementById('link').value;
+    // var refComment = document.getElementById('comment').value;
+    // var refID = document.getElementById('referenceID').value;
+    // var reference = {
+    //     "refTitle": refTitle,
+    //     "refLink": refLink,
+    //     "refComment": refComment,
+    //     "refID": refID
+    // };
 
-    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
+    var title = document.getElementById('title').value;
+    var link = document.getElementById('link').value;
+    var notes = document.getElementById('comment').value;
+    var id = document.getElementById('referenceID').value;
+    httpGetAsync("api/editReference?citationID=" + encodeURIComponent(id) + "&title=" +
+        encodeURIComponent(title) + "&link=" + encodeURIComponent(link) + "&notes=" +
+        encodeURIComponent(notes) + "&user=" + encodeURIComponent(sessionUsername) , "GET", reference);
 }
 
 function removeRef() {
     var reference = getRefDetails();
-    httpGetAsync("api/removeRef?", "DELETE", reference);
+    httpGetAsync("api/removeReference?citationID", "GET", reference);
 
 }
 
