@@ -68,12 +68,12 @@ function getRefDetails() {
 
 function submitRef() {
     var reference = getRefDetails();
-    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", reference);
+    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/addreference?title="+reference.refTitle+"&link="+reference.refLink+"&notes="+reference.refComment, "PUT", reference);
 }
 
 function removeRef() {
     var reference = getRefDetails();
-    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "DELETE", reference);
+    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/removeRef?", "DELETE", reference);
 
 }
 
@@ -86,13 +86,13 @@ function submitNewUser() {
         "password": password
     };
 
-    httpGetAsync("https://jsonplaceholder.typicode.com/posts", "PUT", newDetails);
+    httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/createuser?username="+username+"&password="+password, "PUT", newDetails);
 
 }
 
 
 function showAllRef() {
-    var references = httpGetAsync("https://jsonplaceholder.typicode.com/posts", "GET", null, tableCallback);
+    var references = httpGetAsync("http://scenarioweek.uksouth.cloudapp.azure.com/api/", "GET", null, tableCallback);
     // The <table> listing is done in the tableCallback function
 }
 window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
