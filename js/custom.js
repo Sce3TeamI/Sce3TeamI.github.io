@@ -1,3 +1,5 @@
+var sessionUsername;
+
 function httpGetAsync(url, type, message, callback) {
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
@@ -12,6 +14,10 @@ function httpGetAsync(url, type, message, callback) {
     };
     request.open(type, url, true);
     request.send(message);
+}
+
+function userCallback(data) {
+  console.log(data);
 }
 
 function tableCallback(data) {
@@ -38,6 +44,7 @@ function tableCallback(data) {
 
 
 function getAccountDetails() {
+    console.log("this works");
     var emailAddress = document.getElementById('inputEmail').value;
     var password = document.getElementById('inputPassword').value;
 
@@ -45,7 +52,7 @@ function getAccountDetails() {
         "email": emailAddress,
         "password": password
     };
-    httpGetAsync("api/loginuser?username="+email+"&password="+password, "GET", reference);
+    httpGetAsync("api/loginuser?username="+email+"&password="+password, "GET", null, userCallback);
 }
 
 function getRefDetails() {
