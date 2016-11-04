@@ -62,7 +62,7 @@ function submitNewUser() {
 
 function addRef() {
     var reference = getRefDetails();
-    $.get("api/editReference?title=" + encodeURIComponent(reference.refTitle) + "&link=" + encodeURIComponent(reference.refLink) + "&notes=" +
+    $.get("api/addReference?title=" + encodeURIComponent(reference.refTitle) + "&link=" + encodeURIComponent(reference.refLink) + "&notes=" +
         encodeURIComponent(reference.refComment) + "&user=" + encodeURIComponent(sessionUsername), function(data) {
         })
 }
