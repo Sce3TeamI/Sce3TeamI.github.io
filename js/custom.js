@@ -123,7 +123,7 @@ function showAllRef() {
               "</td><td>" +
               data[i].notes +
               "</td><td> <button id='editButton' data-toggle='modal' data-target='#modalEdit'> Edit </button> </td><td>" +
-              "</td><td> <button class='removeButton' id='remove_" + data[i].citationID + "'> Remove </button> </td><td>"
+              "</td><td> <button class='removeButton' onclick='removeRef(" + data[i].citationID + ")' id='remove_" + data[i].citationID + "'> Remove </button> </td><td>"
               "</td></tr>";
           console.log(data[i]);
       }
