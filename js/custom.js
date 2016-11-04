@@ -109,16 +109,18 @@ function showAllRef() {
       console.log(data);
       //console.log(Object.keys(data).length);
       var out = "<table>";
-      out += " <tr> <th>id</th> <th>title</th> <th>body</th> </tr>"
+      out += " <tr> <th>id</th> <th>title</th> <th>link</th> <th>notes</th> </tr>"
       // For each objects in the JSON response, create a table entry with some properties (eg: id, title, body ect..)
       for (var i = 0; i < Object.keys(data).length; i++) {
           // TODO: When we'll use the actual API of our server, change these properties to the actual properties of the DB.
           out += "<tr id='refID'><td>" +
-              data[i].id +
+              data[i].citationID +
               "</td><td>" +
               data[i].title +
               "</td><td>" +
-              data[i].body +
+              data[i].link +
+              "</td><td>" +
+              data[i].notes +
               "</td><td> <button id='editButton' data-toggle='modal' data-target='#modalEdit'> Edit </button> </td><td>" +
               "</td><td> <button> Remove </button> </td><td>"
               "</td></tr>";
