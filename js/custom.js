@@ -97,8 +97,8 @@ function editRef() {
 }
 
 function removeRef(id) {
-    var reference = getRefDetails();
-    $.get("api/removeReference?citationID" + + encodeURIComponent(id), function(data) {
+   // var reference = getRefDetails();
+    $.get("api/removeReference?citationID=" + encodeURIComponent(id), function(data) {
     });
 }
 
@@ -134,7 +134,7 @@ function showAllRef() {
 }
 // window.onload = showAllRef; // This ensures that showAllRef() shows the table info as soon as the main page loads
 
-$('.removeButton').on("click", function(event)
+$('.removeButton').live('click', function(event)
 {
     var id = event.target.id.replace("remove_", "");
     removeRef(id);
